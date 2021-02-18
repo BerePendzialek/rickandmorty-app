@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 
-import WikiPage from './WikiPage'
-import PlayPage from './PlayPage'
-import HomePage from './HomePage'
-import Navigation from './Navigation'
+import WikiPage from './components/WikiPage/WikiPage'
+import PlayPage from './components/PlayPage/PlayPage'
+import HomePage from './components/HomePage/HomePage'
+import Navigation from './components/Navigation/Navigation'
 
 function App() {
-  const [characters, setCharacters] = useState([])
   const [currentPage, setCurrentPage] = useState('home')
-
-  // useEffect(() => {
-  //   getAllCharacters() // no url provided, so the default parameter is used
-  // }, [])
 
   return (
     <>

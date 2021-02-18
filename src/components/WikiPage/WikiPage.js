@@ -1,9 +1,17 @@
 import './WikiPage.css'
-import React from 'react'
-import { results } from './rickandmortyapi.json'
-import Card from './Card'
+import React, { useState, useEffect } from 'react'
+import { results } from '../../rickandmortyapi.json'
+import Card from '../Card/Card'
 
 export default function WikiPage({ title, hidden }) {
+  //const [characters, setCharacters] = useState([])
+
+  // useEffect(() => {
+  //   getAllCharacters({
+  // url: 'https://rickandmortyapi.com/api/character', setCharacters,
+  //})
+  // }, [])
+
   return (
     <>
       <section className="WikiPage" hidden={hidden}>
