@@ -1,0 +1,7 @@
+.HomePage {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: royalblue;
+  gap: 40px;
+}
