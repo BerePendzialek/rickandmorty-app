@@ -1,6 +1,7 @@
 .Navigation {
   display: flex;
   width: 100%;
+  position: fixed;
 }
 
 .Navigation button {

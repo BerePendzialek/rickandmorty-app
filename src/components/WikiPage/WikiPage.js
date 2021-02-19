@@ -1,35 +1,32 @@
 import './WikiPage.css'
 import React, { useState, useEffect } from 'react'
-import { results } from '../../rickandmortyapi.json'
-import Card from '../Card/Card'
 
-export default function WikiPage({ title, hidden }) {
-  //const [characters, setCharacters] = useState([])
+export default function WikiPage({ hidden }) {
+  const [characters, setCharacters] = useState([])
 
-  // useEffect(() => {
-  //   getAllCharacters({
-  // url: 'https://rickandmortyapi.com/api/character', setCharacters,
-  //})
-  // }, [])
+  useEffect(() => {
+    getAllCharacters()
+  }, [])
+
+  function getAllCharacters(url = 'https://rickandmortyapi.com/api/character') {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setCharacters(oldState => [...oldState, ...data.results])
+
+        const nextUrl = data.info.next
+        nextUrl && getAllCharacters(nextUrl)
+      })
+  }
 
   return (
     <>
       <section className="WikiPage" hidden={hidden}>
-        <h1>{title}</h1>
-
-        {results.map(
-          ({ name, id, status, species, image, origin, location }) => (
-            <Card
-              key={id}
-              name={name}
-              status={status}
-              species={species}
-              image={image}
-              origin={origin.name}
-              location={location.name}
-            />
-          )
-        )}
+        <ul>
+          {characters.map(character => (
+            <li key={character.id}>{character.name}</li>
+          ))}
+        </ul>
       </section>
     </>
   )
