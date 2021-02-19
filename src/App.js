@@ -16,10 +16,14 @@ function App() {
       <AppHeader title="R-and-M App" />
 
       <div className="App">
-        <HomePage hidden={currentPage !== 'home'} title="Home" />
+        <HomePage
+          hidden={currentPage !== 'home'}
+          title="Your daily character"
+        />
         <WikiPage hidden={currentPage !== 'wiki'} title="Wiki" />
         <PlayPage hidden={currentPage !== 'play'} title="Play" />
       </div>
+
       <Navigation onNavigate={setCurrentPage} />
     </Grid>
   )
