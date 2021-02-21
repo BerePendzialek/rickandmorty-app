@@ -17,3 +17,8 @@ ul {
 [hidden] {
   display: none !important;
 }
+
+input,
+button {
+  font-size: 1em;
+}

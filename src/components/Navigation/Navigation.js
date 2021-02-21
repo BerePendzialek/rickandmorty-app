@@ -1,5 +1,9 @@
 import './Navigation.css'
 
+//import homeSVG from '@fortawesome/fontawesome-free/svgs/solid/home.svg'
+//import wikiSVG from '@fortawesome/fontawesome-free/svgs/solid/chalkboard-teacher.svg'
+//import playSVG from '@fortawesome/fontawesome-free/svgs/solid/play-circle.svg'
+
 export default function Navigation({ onNavigate }) {
   return (
     <nav className="Navigation">

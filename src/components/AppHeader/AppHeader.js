@@ -1,5 +1,6 @@
 import React from 'react'
 import './AppHeader.css'
+import '../../styles/global.css'
 
 export default function AppHeader({ title }) {
   return (

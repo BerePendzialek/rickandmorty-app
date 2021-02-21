@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Grid>
-      <AppHeader title="R-and-M App" />
+      <AppHeader title="Rick & Morty Stuff" />
 
       <div className="App">
         <HomePage

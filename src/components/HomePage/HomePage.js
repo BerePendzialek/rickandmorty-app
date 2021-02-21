@@ -28,7 +28,7 @@ export default function HomePage({ title, hidden }) {
 
   return (
     <section className="HomePage" hidden={hidden}>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
 
       <button onClick={() => filterRandom(characters)}>Random!</button>
 

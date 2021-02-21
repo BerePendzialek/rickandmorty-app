@@ -14,9 +14,9 @@ export default function Card({
 
   return (
     <section className="Card">
-      <h2>
+      <h3>
         {name} {icon}
-      </h2>
+      </h3>
       <img src={image} alt="" />
       <button onClick={() => setIsTextVisible(!isTextVisible)}>
         {isTextVisible ? 'Hide details' : 'Show details'}

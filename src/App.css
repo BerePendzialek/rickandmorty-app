@@ -2,4 +2,5 @@
   display: grid;
   gap: 40px;
   overflow-y: scroll;
+  background: var(--color-white);
 }

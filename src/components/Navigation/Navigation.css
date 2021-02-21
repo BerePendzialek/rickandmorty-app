@@ -1,8 +1,13 @@
 .Navigation {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
   width: 100%;
 }
 
 .Navigation button {
   width: 100%;
+  background: var(--color-rosa);
+  color: white;
+  border: none;
 }

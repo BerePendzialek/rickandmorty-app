@@ -1,8 +1,13 @@
 .HomePage {
   height: 100%;
   display: grid;
-  place-items: center;
-  background: #eee;
+  place-items: left;
   gap: 40px;
   overflow-y: scroll;
+}
+
+.HomePage h2 {
+  font-weight: 400;
+  color: var(--color-dark-blue);
+  font-size: 100%;
 }
