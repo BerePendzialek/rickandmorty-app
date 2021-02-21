@@ -1,33 +1,48 @@
 import './HomePage.css'
-import React, { useState } from 'react'
-import { results } from '../../rickandmortyapi.json'
+import React, { useState, useEffect } from 'react'
 import Card from '../Card/Card'
-//import filterRandom from '../../services/filterRandom'
 
 export default function HomePage({ title, hidden }) {
-  //const [randomCharacter, setRandomCharacter] = useState()
+  const [characters, setCharacters] = useState([])
+  const [data, setData] = useState(characters)
 
-  //<button onClick={setRandomCharacter()}>Random!</button>
+  useEffect(() => {
+    getAllCharacters()
+  }, [])
+
+  function getAllCharacters(url = 'https://rickandmortyapi.com/api/character') {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setCharacters(oldState => [...oldState, ...data.results])
+
+        const nextUrl = data.info.next
+        nextUrl && getAllCharacters(nextUrl)
+      })
+  }
+
+  function filterRandom(characters) {
+    const randomNumber = Math.floor(Math.random() * characters.length)
+    return setData([characters[randomNumber - 1]])
+  }
 
   return (
     <section className="HomePage" hidden={hidden}>
       <h1>{title}</h1>
 
-      <button>Random!</button>
+      <button onClick={() => filterRandom(characters)}>Random!</button>
 
-      {results
-        //.filter((character, index) => randomCharacter === index)
-        .map(({ name, id, status, species, image, origin, location }) => (
-          <Card
-            key={id}
-            name={name}
-            status={status}
-            species={species}
-            image={image}
-            origin={origin.name}
-            location={location.name}
-          />
-        ))}
+      {data.map(({ name, id, status, species, image, origin, location }) => (
+        <Card
+          key={id}
+          name={name}
+          status={status}
+          species={species}
+          image={image}
+          origin={origin.name}
+          location={location.name}
+        />
+      ))}
     </section>
   )
 }
