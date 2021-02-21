@@ -19,7 +19,7 @@ export default function PlayPage({ title, hidden }) {
         return
       }
       const newSquares = squares.slice()
-      newSquares[i] = xIsNext ? 'X' : 'O'
+      newSquares[i] = xIsNext ? '🙆🏻' : '👽'
       setSquares(newSquares)
       setXIsNext(!xIsNext)
     }
@@ -28,7 +28,7 @@ export default function PlayPage({ title, hidden }) {
       return <Square value={squares[i]} onClick={() => handleClick(i)} />
     }
 
-    const status = 'Next player: ' + (xIsNext ? 'X' : 'O')
+    const status = 'Next player: ' + (xIsNext ? '🙆🏻' : '👽')
 
     return (
       <div>
@@ -94,7 +94,7 @@ export default function PlayPage({ title, hidden }) {
 
   return (
     <section className="PlayPage" hidden={hidden}>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <Game />
     </section>
   )

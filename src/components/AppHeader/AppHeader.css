@@ -1,11 +1,13 @@
 .AppHeader {
   background: var(--color-white);
   color: var(--color-dark-blue);
-}
-
-.AppHeader h1 {
-  font-weight: 600;
-  font-size: 112.5%;
+  border-bottom: thin;
+  font-weight: 400;
+  font-size: 0.8rem;
   text-align: center;
-  border: 2px;
+  top: 0;
+  margin: 0;
+  border-bottom: 2px solid var(--color-yellow);
+  width: 100%;
+  text-transform: uppercase;
 }

@@ -30,7 +30,12 @@ export default function HomePage({ title, hidden }) {
     <section className="HomePage" hidden={hidden}>
       <h2>{title}</h2>
 
-      <button onClick={() => filterRandom(characters)}>Random!</button>
+      <button
+        className="HomePage__button"
+        onClick={() => filterRandom(characters)}
+      >
+        Random!
+      </button>
 
       {data.map(({ name, id, status, species, image, origin, location }) => (
         <Card

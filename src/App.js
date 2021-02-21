@@ -13,14 +13,17 @@ function App() {
 
   return (
     <Grid>
-      <AppHeader title="Rick & Morty Stuff" />
+      <AppHeader title="Wubba Lubba Dub Dub!" />
 
       <div className="App">
         <HomePage
           hidden={currentPage !== 'home'}
-          title="Your daily character"
+          title="- Your daily character -"
         />
-        <WikiPage hidden={currentPage !== 'wiki'} title="Wiki" />
+        <WikiPage
+          hidden={currentPage !== 'wiki'}
+          title="- Character search -"
+        />
         <PlayPage hidden={currentPage !== 'play'} title="Play" />
       </div>
 

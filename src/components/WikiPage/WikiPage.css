@@ -1,8 +1,22 @@
 .WikiPage {
-  height: 100%;
   display: grid;
   place-items: center;
-  background: #eee;
-  gap: 40px;
   overflow-y: scroll;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-dark-blue);
+  padding: 20px;
+  gap: 20px;
+  text-transform: uppercase;
+}
+
+.WikiPage__input {
+  background: var(--color-yellow);
+  color: var(--color-dark-blue);
+  padding: 12px 60px 14px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px var(--color-ligth-blue);
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
 }

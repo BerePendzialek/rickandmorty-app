@@ -2,9 +2,9 @@ import './WikiPage.css'
 import React, { useState, useEffect } from 'react'
 import Card from '../Card/Card'
 
-export default function WikiPage({ hidden }) {
+export default function WikiPage({ hidden, title }) {
   const [characters, setCharacters] = useState([])
-  const [userInput, setUserInput] = useState('A')
+  const [userInput, setUserInput] = useState('')
 
   useEffect(() => {
     getAllCharacters()
@@ -24,7 +24,9 @@ export default function WikiPage({ hidden }) {
   return (
     <>
       <section className="WikiPage" hidden={hidden}>
+        <h2>{title}</h2>
         <input
+          className="WikiPage__input"
           value={userInput}
           onChange={event => setUserInput(event.target.value)}
           placeholder="Filter name"
