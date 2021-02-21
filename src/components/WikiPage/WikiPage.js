@@ -1,5 +1,6 @@
 import './WikiPage.css'
 import React, { useState, useEffect } from 'react'
+import Card from '../Card/Card'
 
 export default function WikiPage({ hidden }) {
   const [characters, setCharacters] = useState([])
@@ -28,17 +29,22 @@ export default function WikiPage({ hidden }) {
           onChange={event => setUserInput(event.target.value)}
           placeholder="Filter name"
         />
-        <ul>
-          {characters
-            .filter(character =>
-              character.name
-                .toLowerCase()
-                .includes(userInput.toLocaleLowerCase())
-            )
-            .map(character => (
-              <li key={character.id}>{character.name}</li>
-            ))}
-        </ul>
+
+        {characters
+          .filter(character =>
+            character.name.toLowerCase().includes(userInput.toLocaleLowerCase())
+          )
+          .map(({ name, id, status, species, image, origin, location }) => (
+            <Card
+              key={id}
+              name={name}
+              status={status}
+              species={species}
+              image={image}
+              origin={origin.name}
+              location={location.name}
+            />
+          ))}
       </section>
     </>
   )

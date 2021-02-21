@@ -9,6 +9,11 @@ body {
   font-family: sans-serif;
 }
 
+ol,
+ul {
+  padding-left: 30px;
+}
+
 [hidden] {
   display: none !important;
 }
