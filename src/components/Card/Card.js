@@ -9,7 +9,7 @@ export default function Card({
   origin,
   location,
 }) {
-  const icon = species === 'Human' ? '🙆🏻' : '👽'
+  const icon = species === 'Human' ? '👤' : '👽'
   const [isTextVisible, setIsTextVisible] = useState(false)
 
   return (
